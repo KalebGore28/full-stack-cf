@@ -13,7 +13,7 @@ app.use("/api/graphql", async (c) => {
 app.get("/api", (c) => c.json({ name: "Hono is running!" }));
 
 export default {
-  async fetch(request: Request, env: any, ctx: ExecutionContext) {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     return app.fetch(request, env, ctx);
-  }
+  },
 };

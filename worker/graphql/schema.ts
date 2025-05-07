@@ -1,5 +1,5 @@
 // src/server/graphql/schema.ts
-import { makeExecutableSchema } from '@graphql-tools/schema';
+import { makeExecutableSchema } from "@graphql-tools/schema";
 
 const typeDefs = /* GraphQL */ `
   type Query {
@@ -8,9 +8,9 @@ const typeDefs = /* GraphQL */ `
 `;
 
 const resolvers = {
-	Query: {
-		hello: () => "Hello from GraphQL!",
-	},
+  Query: {
+    hello: () => "Hello from GraphQL!",
+  },
 };
 
 export const schema = makeExecutableSchema({ typeDefs, resolvers });

@@ -1,6 +1,5 @@
-import { Button } from './components/ui/button'
-import { useState } from 'react';
-
+import { Button } from "./components/ui/button";
+import { useState } from "react";
 
 function App() {
   const [data, setData] = useState<any | null>(null);
@@ -11,9 +10,9 @@ function App() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api');
+      const response = await fetch("/api");
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       const result = await response.json();
       setData(result);
@@ -21,12 +20,12 @@ function App() {
       if (error instanceof Error) {
         setError(error);
       } else {
-        setError(new Error('An unknown error occurred'));
+        setError(new Error("An unknown error occurred"));
       }
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-svh">
@@ -39,10 +38,11 @@ function App() {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
       )}
-      <Button className="mt-4" onClick={fetchData}>Click Me</Button>
-
+      <Button className="mt-4" onClick={fetchData}>
+        Click Me
+      </Button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
