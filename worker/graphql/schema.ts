@@ -8,9 +8,9 @@ const typeDefs = /* GraphQL */ `
 `;
 
 const resolvers = {
-  Query: {
-    hello: () => "Hello from GraphQL!",
-  },
+    Query: {
+        hello: () => "Hello from GraphQL!",
+    },
 };
 
 export const schema = makeExecutableSchema({ typeDefs, resolvers });

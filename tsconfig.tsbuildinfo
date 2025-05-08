@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/ui/button.tsx","./src/lib/fetchgraphql.ts","./src/lib/utils.ts","./worker/index.ts","./worker/db/schema.ts","./worker/graphql/resolvers.ts","./worker/graphql/schema.ts"],"errors":true,"version":"5.7.3"}

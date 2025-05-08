@@ -4,12 +4,6 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 export default tseslint.config(
   { ignores: ["dist"] },
   {
@@ -17,8 +11,8 @@ export default tseslint.config(
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: [resolve(__dirname, "tsconfig.json")],
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
       ecmaVersion: 2020,
       globals: globals.browser,
