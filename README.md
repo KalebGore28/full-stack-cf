@@ -7,6 +7,7 @@ A full-stack application built with **React 19**, **Hono**, and **Relay**, deplo
 - **React 19** — UI rendering
 - **Relay** — GraphQL client with typed queries and co-located fragments
 - **Hono** — lightweight backend framework for Cloudflare Workers
+- **ShadCN** - Sleek UI component library
 - **GraphQL Yoga** — GraphQL server runtime
 - **Tailwind CSS** — utility-first styling
 - **Bun** — fast dev scripts and tooling
