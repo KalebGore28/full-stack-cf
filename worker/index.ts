@@ -1,7 +1,7 @@
 // src/server/index.ts
 import { Hono } from "hono";
 import { createYoga } from "graphql-yoga";
-import { schema } from "./graphql/schema";
+import { schema } from "./graphql/index";
 
 const app = new Hono();
 
