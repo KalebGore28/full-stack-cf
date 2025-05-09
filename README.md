@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+\# Hono + React + Relay Cloudflare App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack application built with **React 19**, **Hono**, and **Relay**, deployed to **Cloudflare Workers**. It demonstrates modern client-server integration using GraphQL with Relay and a minimalist REST endpoint.
 
-Currently, two official plugins are available:
+\## 🛠 Built With
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** — UI rendering
+- **Relay** — GraphQL client with typed queries and co-located fragments
+- **Hono** — lightweight backend framework for Cloudflare Workers
+- **GraphQL Yoga** — GraphQL server runtime
+- **Tailwind CSS** — utility-first styling
+- **Bun** — fast dev scripts and tooling
+- **Vite** — frontend bundler with plugin support
+- **Wrangler** — Cloudflare Workers deployment CLI
 
-## Expanding the ESLint configuration
+## 🧪 Local Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+bun install
+bun run dev       # Run Vite dev server (frontend only)
+bun run build     # Build frontend and backend
+bun run deploy    # Deploy to Cloudflare
+bun run relay     # Compile Relay artifacts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Live Preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> Preview: [https://full-stack.x47788rdp6.workers.dev](https://full-stack.x47788rdp6.workers.dev)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+---
+
+## 📁 Project Structure
+
 ```
+src         # React app (components, hooks, Relay queries)
+worker      # Hono + GraphQL Yoga server code
+/src/schema.graphql  # Shared GraphQL schema (for Relay + Yoga)
+```
+
+---
+
+## 📬 API Endpoints
+
+- `GET /api\` – returns a simple JSON message
+- `POST /api/graphql\` – GraphQL endpoint handled by Yoga
+
+---
+
+## ✨ Features
+
+- Relay-based GraphQL query system with auto-generated types
+- Fast deployable Workers backend
+- Vite hot-reloading for frontend
+- Type-safe build pipeline with TypeScript and ESLint
+
+---
+
+## 📄 License
+
+MIT
