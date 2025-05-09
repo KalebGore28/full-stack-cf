@@ -2,6 +2,14 @@
 
 A full-stack application built with **React 19**, **Hono**, and **Relay**, deployed to **Cloudflare Workers**. It demonstrates modern client-server integration using GraphQL with Relay and a minimalist REST endpoint.
 
+Credit: Cloudflare templates for base configuration of project
+See the blog: [Cloudflare Blog](https://blog.cloudflare.com/full-stack-development-on-cloudflare-workers/)
+
+
+```bash
+bun create cloudflare@latest my-react-app -- --framework=react
+```
+
 \## 🛠 Built With
 
 - **React 19** — UI rendering
@@ -35,7 +43,6 @@ bun run relay     # Compile Relay artifacts
 ```
 src         # React app (components, hooks, Relay queries)
 worker      # Hono + GraphQL Yoga server code
-/src/schema.graphql  # Shared GraphQL schema (for Relay + Yoga)
 ```
 
 ---
