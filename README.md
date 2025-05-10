@@ -26,7 +26,7 @@ bun create cloudflare@latest my-react-app -- --framework=react
 
 ```bash
 bun install
-bun run dev       # Run Vite dev server (frontend only)
+bun run dev       # Run Vite dev server
 bun run build     # Build frontend and backend
 bun run deploy    # Deploy to Cloudflare
 bun run relay     # Compile Relay artifacts
