@@ -23,6 +23,7 @@ const fetchGraphQL: FetchFunction = async (request, variables) => {
   if (!resp.ok) {
     throw new Error("Response failed.");
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return await resp.json();
 };
 
