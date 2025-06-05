@@ -1,6 +1,6 @@
 import { AppQuery } from "./__generated__/AppQuery.graphql";
 import { graphql, useLazyLoadQuery } from "react-relay";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "./components/ui/button";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     message: string;
   };
 
-  const fetchApiMessage = async () => {
+  const fetchApiMessage = useCallback(async () => {
     try {
       const res = await fetch("/api");
       const json = (await res.json()) as ApiResponse;
@@ -28,7 +28,7 @@ function App() {
       console.error("Error fetching /api:", err);
       setApiMessage("Error fetching API");
     }
-  };
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-svh space-y-4">
